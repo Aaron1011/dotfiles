@@ -116,9 +116,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source /home/aaron/.rvm/scripts/rvm
-
 alias netscan='sudo arp-scan --localnet --interface wlan0'
 alias update-all='find . -name ".git"  -type d -prune -execdir git pull \;'
 
@@ -156,7 +153,17 @@ done
 export PATH="/home/aaron/bin:$PATH"
 alias git=hub
 
-# added by travis gem
-source /home/aaron/.travis/travis.sh
 alias bd='. bd -s'
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /home/aaron/.travis/travis.sh ] && source /home/aaron/.travis/travis.sh
+. ~/.rvm/scripts/rvm
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export OOC_LIBS=$HOME/ooc-libs
