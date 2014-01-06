@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'linguist'
+
+git_index = `git diff --name-only --staged`.strip.split
+message_file = ARGV.first
+
+if git_index.all? do |f|
+    blob = Linguist::FileBlob.new(f)
+    if blob.language != nil
+      blob.language.type != :programming
+    else
+      true
+    end
+  end
+
+  msg = File.read(message_file)
+  File.open(message_file, 'w') do |file|
+    file << "\n\n[ci skip]"
+    file << msg
+  end
+end
