@@ -1,0 +1,26 @@
+[user]
+	email = aa1ronham@gmail.com
+	name = Aaron Hill
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=relative
+  type = cat-file -t
+  dump = cat-file -p
+	pushd = !git push && (gnome-terminal -x bash -c  \"sh deploy_to_testflight.sh\" &)
+[push]
+	default = simple
+[dude]
+	interval = 30
+[init]
+	templatedir = ~/.git_template
+[help]
+	autocorrect = 5
+[gitreview]
+	username = aaron1213
