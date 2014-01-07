@@ -8,7 +8,7 @@
 #
 
 # Location of your dotfiles in $HOME
-DOTFILES=repos/dotfiles
+DOTFILES=.dotfiles
 
 # dotfiles to symlink
 #
