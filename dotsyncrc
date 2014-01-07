@@ -75,8 +75,8 @@ vimrc
 
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
 [hosts]
-Aarons-MacBook git=192.168.0.109
-Aarons-Laptop  git=192.168.0.22
+Aarons-MacBook rsync=192.168.0.109
+Aarons-Laptop  rsync=192.168.0.22
 #host1.example.com               git=ANY                        files=custom/dotfile    #git repo, pull from anywhere and link a custom dotfile
 #host2.example.com               git=ANY                                                #git repo, pull from anywhere
 #host3.example.com               git=ANY                                                #git repo, pull from anywhere
